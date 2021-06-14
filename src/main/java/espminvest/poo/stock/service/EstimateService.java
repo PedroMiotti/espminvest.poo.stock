@@ -14,15 +14,15 @@ import java.util.stream.Collectors;
 public class EstimateService {
 
     @Autowired
-    EstimateRepository estimateRepository;
+    private EstimateRepository estimateRepository;
 
     @Autowired
-    StockService stockService;
+    private StockService stockService;
 
-    public EstimateBean findBy(Integer currencyId, Date date) {
+    public EstimateBean findBy(Integer stockId, Date date) {
 
         EstimateBean estimate = estimateRepository
-                .listByCurrencyDate(currencyId, date).stream()
+                .listByCurrencyDate(stockId, date).stream()
                 .map(EstimateModel::toBean)
                 .findFirst()
                 .orElse(null);
@@ -30,9 +30,9 @@ public class EstimateService {
         return fillStock(estimate);
     }
 
-    public List<EstimateBean> listBy(Integer currencyId, Date initDate, Date endDate) {
+    public List<EstimateBean> listBy(Integer stockId, Date initDate, Date endDate) {
         return estimateRepository
-                .listBy(currencyId, initDate, endDate).stream()
+                .listBy(stockId, initDate, endDate).stream()
                 .map(EstimateModel::toBean)
                 .map(this::fillStock)
                 .collect(Collectors.toList());
