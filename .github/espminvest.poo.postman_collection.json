@@ -1,0 +1,468 @@
+{
+	"info": {
+		"_postman_id": "44c687c0-b9fa-4eb6-9bf3-4ac96809507c",
+		"name": "espminvest.poo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Fanie",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{user_uri}}/users",
+							"host": [
+								"{{user_uri}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{user_uri}}/users/24",
+							"host": [
+								"{{user_uri}}"
+							],
+							"path": [
+								"users",
+								"24"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{user_uri}}/users",
+							"host": [
+								"{{user_uri}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{user_uri}}/users/24",
+							"host": [
+								"{{user_uri}}"
+							],
+							"path": [
+								"users",
+								"24"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Wallet",
+			"item": [
+				{
+					"name": "CambioTransaction",
+					"item": [
+						{
+							"name": "buy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "currencyId",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "qtd",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "limit ",
+											"value": "3",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8082/api/v1/cambio/transaction/buy/17",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"api",
+										"v1",
+										"cambio",
+										"transaction",
+										"buy",
+										"17"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "listByWalletId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8082/api/v1/cambio/transactions/4",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"api",
+										"v1",
+										"cambio",
+										"transactions",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "sell",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "currencyId",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "qtd",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "limit",
+											"value": "3",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8082/api/v1/cambio/transaction/sell/17",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"api",
+										"v1",
+										"cambio",
+										"transaction",
+										"sell",
+										"17"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user",
+									"value": "6",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8082/api/v1/wallets",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"wallets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8082/api/v1/wallets/17",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"wallets",
+								"17"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cambio",
+			"item": [
+				{
+					"name": "Currency",
+					"item": [
+						{
+							"name": "list",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8081/api/v1/estimates/currencies",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"estimates",
+										"currencies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "currencyById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8081/api/v1/estimates/currencies/3",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"estimates",
+										"currencies",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "listAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/api/v1/estimates?currencyId=1&dateInit=20200610&dateEnd=20210115",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"estimates"
+							],
+							"query": [
+								{
+									"key": "currencyId",
+									"value": "1"
+								},
+								{
+									"key": "dateInit",
+									"value": "20200610"
+								},
+								{
+									"key": "dateEnd",
+									"value": "20210115"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EstimateStock",
+			"item": [
+				{
+					"name": "Stocks",
+					"item": [
+						{
+							"name": "list",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8084/api/v1/estimates/stocks",
+									"host": [
+										"localhost"
+									],
+									"port": "8084",
+									"path": [
+										"api",
+										"v1",
+										"estimates",
+										"stocks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8084/api/v1/estimates/stocks/3",
+									"host": [
+										"localhost"
+									],
+									"port": "8084",
+									"path": [
+										"api",
+										"v1",
+										"estimates",
+										"stocks",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "getStockEstimate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8084/api/v1/estimates/2/20200608",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"v1",
+								"estimates",
+								"2",
+								"20200608"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getStockEstimatesRange",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "user_uri",
+			"value": "localhost:8083"
+		},
+		{
+			"key": "wallet_uri",
+			"value": "localhost:8082"
+		},
+		{
+			"key": "wallet_uri_v2",
+			"value": "localhost:8084"
+		}
+	]
+}
